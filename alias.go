@@ -1,4 +1,4 @@
-package alias
+package main
 
 import (
 	"fmt"
@@ -16,12 +16,12 @@ type Alias struct {
 	RunCommandFile string
 }
 
-// New creates a new Alias instance after validating the alias name and checking for duplicates in the shell profile.
+// NewAlias creates a new Alias instance after validating the alias name and checking for duplicates in the shell profile.
 // - `name` is the desired alias name.
 // - `dir` is the directory the alias should navigate to.
 // - `runCommandFile` is the shell profile file where the alias should be stored.
 // Returns an error if the alias name is invalid, already exists, or if the shell profile cannot be read.
-func New(name, dir, runCommandFile string) (*Alias, error) {
+func NewAlias(name, dir, runCommandFile string) (*Alias, error) {
 	// validate alias name (allow only alphanumeric characters, underscores, and hyphens)
 	matched, err := regexp.MatchString(`^[a-zA-Z0-9_-]+$`, name)
 	if err != nil {

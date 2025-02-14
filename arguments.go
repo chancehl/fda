@@ -1,4 +1,4 @@
-package arguments
+package main
 
 import (
 	"errors"
@@ -14,11 +14,11 @@ type Args struct {
 	Dir string
 }
 
-// Parse extracts command-line arguments and returns an Args struct.
+// ParseArgs extracts command-line arguments and returns an Args struct.
 // It expects at least one argument (the alias name).
 // If a second argument (directory) is not provided, it defaults to the current working directory.
 // Returns an error if the alias name is missing or if the specified directory does not exist.
-func Parse() (*Args, error) {
+func ParseArgs() (*Args, error) {
 	var name string
 	if len(os.Args) <= 1 {
 		return nil, fmt.Errorf("missing required parameter <name>")

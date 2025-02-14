@@ -3,10 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-
-	"github.com/chancehl/fda/internal/alias"
-	"github.com/chancehl/fda/internal/arguments"
-	"github.com/chancehl/fda/internal/environment"
 )
 
 func main() {
@@ -17,17 +13,17 @@ func main() {
 }
 
 func run() error {
-	args, err := arguments.Parse()
+	args, err := ParseArgs()
 	if err != nil {
 		return err
 	}
 
-	runCommandFile, err := environment.GetRunCommandFile()
+	runCommandFile, err := GetRunCommandFile()
 	if err != nil {
 		return err
 	}
 
-	alias, err := alias.New(args.Name, args.Dir, runCommandFile)
+	alias, err := NewAlias(args.Name, args.Dir, runCommandFile)
 	if err != nil {
 		return err
 	}
