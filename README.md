@@ -78,12 +78,21 @@ This will change the working directory to `/home/user/code/myproject`.
 - If valid, it appends the alias to your shell's configuration file (`.bashrc` or `.zshrc`).
 - You can then use `source` to reload your shell profile and immediately use the alias.
 
-## **Future Enhancements**
+## Usage
 
-- Support for additional shells (e.g., `fish`).
-- A command to remove aliases.
-- Improved shell profile detection for custom setups.
+```
+fda creates directory aliases for you to use
 
-## **License**
+Usage:
+  fda [command]
 
-TODO
+Available Commands:
+  add
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+
+Flags:
+  -h, --help   help for fda
+
+Use "fda [command] --help" for more information about a command.
+```
