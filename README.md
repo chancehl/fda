@@ -14,7 +14,7 @@
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/fda.git
+   git clone https://github.com/chancehl/fda.git
    cd fda
    ```
 2. Build the binary:
